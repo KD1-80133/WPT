@@ -1,0 +1,68 @@
+body {
+    font-family: Arial;
+   
+}
+
+
+.header {
+    background-color: black;
+    color:white;
+    padding: 10px;
+}
+
+.form-container {
+    width: 60%;
+    margin: 20px;
+}
+
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: antiquewhite;
+    box-shadow: 0 0 10px black; /* Adding a shadow */
+    
+}
+
+table td {
+    padding: 8px;
+    border: 1px solid black;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: black;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"] {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 1 px;
+    border: 1px solid black;
+    border-radius: 4px;
+    
+}
+
+select {
+    width: 99%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

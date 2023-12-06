@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin-left: 500px;
+    flex-direction: column;
+    height: 100px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    color: black;
+}
+
+header h1 {
+    margin-right: 500px;
+    text-decoration: underline;
+}
+
+
+
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    background-color: peachpuff;
+    border-radius: 8px;
+    box-shadow: 10px black;
+}
+
+.video {
+    flex: 1;
+    padding: 20px;
+}
+
+.form {
+    flex: 1;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+
+}
+
+td {
+    padding: 8px;
+}

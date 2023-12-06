@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+
+h1 {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 10px black
+}
+
+input[type="text"],
+input[type="button"] {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font-size: 20px;
+}
+
+input[type="button"] {
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}

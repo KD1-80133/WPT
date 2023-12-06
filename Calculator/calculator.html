@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css" />
+</head>
+<body>
+    <h1>Calculator</h1>
+    <label>Enter Number1:</label>
+    <input type="text" id="num1"/><br/><br/>
+    <label>Enter Number2:</label>
+    <input type="text" id="num2"/><br/><br/>
+    <label>Result:</label>
+    <input type="text" id="result" readonly/><br/><br/>
+    <input type="button" value="Addition" onclick="add()">
+    <input type="button" value="Substraction" onclick="subtract()"/>
+    <input type="button" value="Multiplication" onclick="multiply()"/>
+    <input type="button" value="Division" onclick="divide()"/>
+    
+    <script>
+        function add()
+        {
+            var num1=document.getElementById("num1").value;
+            var num2=document.getElementById("num2").value;
+            document.getElementById("result").value=+num1+ +num2;
+        }
+        function subtract()
+        {
+            var num1=document.getElementById("num1").value;
+            var num2=document.getElementById("num2").value;
+            document.getElementById("result").value=num1- num2;
+        }
+
+        function multiply()
+        {
+            var num1=document.getElementById("num1").value;
+            var num2=document.getElementById("num2").value;
+            document.getElementById("result").value=num1 * num2;
+        }
+        function divide()
+        {
+            var num1=document.getElementById("num1").value;
+            var num2=document.getElementById("num2").value;
+            if(num2===0)
+            {
+                console.log("Cannot divide by zero");
+            }
+            else
+            {
+                document.getElementById("result").value=num1 / num2;
+            }
+    }
+    </script>
+
+
+</body>
+</html>

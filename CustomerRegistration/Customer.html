@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Customer Registration</title>
+    <link rel="stylesheet" href="Customer.css">
+</head>
+<body>
+    <center>
+        <form id="registrationForm" onsubmit="return validateForm()" method="get">
+            <div class="header">
+                <h1>Customers Registration</h1>
+            </div>
+            <div class="form-container">
+                <table>
+                    <tr>
+                        <td>CNUM</td>
+                        <td><input type="number" required="required" name="Cnum" id="Cnum"></td>
+                    </tr>
+                    <tr>
+                        <td>CNAME</td>
+                        <td><input type="text" required="required" name="Cname" id="Cname"></td>
+                    </tr>
+                    <tr>
+                        <td>EMAIL</td>
+                        <td><input type="email" required="required" name="Cemail" id="Cemail"></td>
+                    </tr>
+                    <tr>
+                        <td>PASSWORD</td>
+                        <td><input type="password" required="required" name="Cpassword" id="Cpassword"></td>
+                    </tr>
+                    <tr>
+                        <td>CONFIRM PASSWORD</td>
+                        <td><input type="password" required="required" name="confirmPassword" id="confirmPassword"></td>
+                    </tr>
+                    <tr>
+                        <td>MOBILE NO</td>
+                        <td><input type="tel" required="required" name="Cmob" id="Cmob" pattern="[0-9]{10}"></td>
+                    </tr>
+                    <tr>
+                        <td>CITY</td>
+                        <td><input type="text" required="required" name="Ccity" id="Ccity"></td>
+                    </tr>
+                    <tr>
+                        <td>STATE</td>
+                        <td>
+                            <select name="State" required="required" id="State">
+                                <option value="">Select State</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Gujrat">Gujrat</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Bihar">Bihar</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>PINCODE</td>
+                        <td><input type="number" required="required" name="Cpin" id="Cpin"></td>
+                    </tr>
+                    <tr>
+                        <td>REQUEST_PAYMENT_MODE</td>
+                        <td>
+                            <input type="radio" name="payment" value="Credit">Credit
+                            <input type="radio" name="payment" value="Debit">Debit
+                            <input type="radio" name="payment" value="UPI">UPI
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" name="submit" id="submitBtn">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </center>
+    <script>
+        function validateForm()
+        {
+            var Cnum = document.getElementById("Cnum");
+            var Cname = document.getElementById("Cname");
+            var Cemail = document.getElementById("Cemail");
+            var Cpassword = document.getElementById("Cpassword");
+            var confirmPassword = document.getElementById("confirmPassword");
+            var Cmob = document.getElementById("Cmob");
+            var Ccity = document.getElementById("Ccity");
+            var State = document.getElementById("State");
+            var Cpin = document.getElementById("Cpin");
+            var payment = document.querySelector('input[name="payment"]:checked');
+
+            if (isNaN(Cnum.value) || Cnum.value.trim() === '') {
+                alert("CNUM must be a number and cannot be empty");
+                return false;
+            }
+
+            
+            if (Cname.value.trim() === '') {
+                alert("CNAME cannot be empty");
+                return false;
+            }
+
+        
+            if (Cemail.value.trim() === '') {
+                alert("EMAIL cannot be empty");
+                return false;
+            }
+
+            
+            if (Cpassword.value !== confirmPassword.value) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            
+            if (!/^\d{10}$/.test(Cmob.value)) {
+                alert("MOBILE NO must be a 10-digit number");
+                return false;
+            }
+
+           
+            if (Ccity.value.trim() === '') {
+                alert("CITY cannot be empty");
+                return false;
+            }
+
+          
+            if (State.value === '') {
+                alert("STATE must be selected");
+                return false;
+            }
+
+           
+            if (!payment) {
+                alert("REQUEST_PAYMENT_MODE must have at least one option selected");
+                return false;
+            }
+
+            storeData();
+            return true;
+        }
+
+        function storeData()
+        {
+            var formData={
+                "Cnum": document.getElementById("Cnum"),
+                "Cname": document.getElementById("Cname"),
+                "Cemail": document.getElementById("Cemail"),
+                "Cpassword": document.getElementById("Cpassword"),
+                "confirmPassword": document.getElementById("confirmPassword"),
+                "Cmob": document.getElementById("Cmob"),
+                "Ccity": document.getElementById("Ccity"),
+                "State": document.getElementById("State"),
+                "payment": document.querySelector('input[name="payment"]:checked')
+            };
+            var jsonData=JSON.stringify(formData);
+            localStorage.setItem("customerData",jsonData);
+        }
+
+    </script>
+</body>
+</html>
