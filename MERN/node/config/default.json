@@ -1,0 +1,8 @@
+{
+    "server": "localhost",
+    "database": "prac",
+    "uname": "root",
+    "pwd": "manager",
+    "port": 5000
+    
+}
